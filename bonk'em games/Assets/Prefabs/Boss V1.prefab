@@ -130,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 2206465831657741568, guid: aae23e07d20ccdd46b1eb546fe7501b1, type: 3}
   bulletSpeed: 800
+  bulletArc: 1
   attackCooldown: 1
 --- !u!114 &2655859423249002143
 MonoBehaviour:

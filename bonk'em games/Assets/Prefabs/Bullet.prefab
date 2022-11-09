@@ -129,4 +129,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToPlayer: 25
   damageToBoss: 10
-  despawnTime: 21.81
+  despawnTime: 5
