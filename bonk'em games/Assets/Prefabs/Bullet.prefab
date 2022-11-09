@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2206465831657741568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.6210747, y: 7.8084793, z: -1.2503932}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,7 +113,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &3695405748028531725
 MonoBehaviour:
@@ -129,3 +129,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToPlayer: 25
   damageToBoss: 10
+  despawnTime: 21.81

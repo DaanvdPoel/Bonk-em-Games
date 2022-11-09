@@ -6,6 +6,17 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float damageToPlayer = 25;
     [SerializeField] private float damageToBoss = 10;
+    [SerializeField] private float despawnTime = 5;
+    private float time;
+    private void Update()
+    {
+        time = time + Time.deltaTime;
+        if(time >= despawnTime)
+        {
+            Despawn();
+            time = 0;
+        } 
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -17,5 +28,10 @@ public class Bullet : MonoBehaviour
         {
             collision.gameObject.GetComponent<BossHealth>().TakeDamage(damageToBoss);
         }
+    }
+
+    public void Despawn()
+    {
+        Destroy(this.gameObject);
     }
 }
