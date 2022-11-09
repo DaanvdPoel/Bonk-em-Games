@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 309400319420843858}
   - component: {fileID: 7835531577454911261}
   - component: {fileID: -4449254950966027535}
+  - component: {fileID: 3695405748028531725}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,3 +115,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!114 &3695405748028531725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2206465831657741568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3573973b64e5ed4b9ec9fa7b70db359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToPlayer: 25
+  damageToBoss: 10
