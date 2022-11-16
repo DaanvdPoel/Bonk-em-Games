@@ -810,6 +810,7 @@ MonoBehaviour:
   m_useSlopeAngle: 1
   m_maxSlopeAngle: 30
   m_groundLayer:
+    serializedVersion: 2
     m_Bits: 0
   m_raycastLength: 1.000001
   m_enableRunning: 1
@@ -819,15 +820,6 @@ MonoBehaviour:
   m_jumpForce: 7
   m_airDashForce: 2
   m_mouseSensitivity: 50
-  m_rigidBody: {fileID: 0}
-  m_isGrounded: 0
-  m_canJump: 1
-  m_hasDashed: 1
-  m_desiredX: 0
-  m_xRotation: 0
-  m_currentMoveSpeed: 0
-  m_xSpeed: 0
-  m_ySpeed: 0
 --- !u!54 &1473733060
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1211,7 +1203,7 @@ PrefabInstance:
     - target: {fileID: 2815736587608336271, guid: fa93e39048addaf49b218c609c91b07e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4739310620338774728, guid: fa93e39048addaf49b218c609c91b07e,
         type: 3}
