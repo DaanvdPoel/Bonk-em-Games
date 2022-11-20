@@ -24,6 +24,7 @@ public class BossHealth : MonoBehaviour
         if(health <= 0)
         {
             Debug.Log("Boss is dead");
+            UIManager.instance.WinScreen();
         }
     }
 }
