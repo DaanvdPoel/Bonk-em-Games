@@ -22,7 +22,8 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player got hit for" + damageToPlayer + "of damage");
+            Debug.Log("Player got hit for " + damageToPlayer + " of damage");
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damageToPlayer);
         }
         else if (collision.gameObject.CompareTag("Boss") && time >= 0.5)
         {

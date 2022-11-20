@@ -5,17 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    static public UIManager instance;
+    public static UIManager instance;
 
-    [SerializeField] private GameObject deathScreen;
     [SerializeField] private GameObject winScreen;
+    [SerializeField] private GameObject deathScreen;
 
     public void Awake()
     {
-        if (instance = null)
-            instance = this;
-        else
+        if (instance != null)
             Destroy(this);
+        else
+            instance = this;
     }
 
     public void WinScreen()
