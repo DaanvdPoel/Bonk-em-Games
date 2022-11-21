@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player got hit for" + damageToPlayer + "of damage");
+            //Debug.Log("Player got hit for" + damageToPlayer + "of damage");
         }
         else if (collision.gameObject.CompareTag("Boss"))
         {
