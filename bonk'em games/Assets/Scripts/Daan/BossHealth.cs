@@ -15,7 +15,7 @@ public class BossHealth : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health = health - amount;
-        Debug.Log("boss got hit for " + amount + " of damage");
+        //Debug.Log("boss got hit for " + amount + " of damage");
         CheckHealth();
     }
 
@@ -23,7 +23,7 @@ public class BossHealth : MonoBehaviour
     {
         if(health <= 0)
         {
-            Debug.Log("Boss is dead");
+            //Debug.Log("Boss is dead");
         }
     }
 }
