@@ -1,11 +1,26 @@
 fileFormatVersion: 2
-guid: c4b7608103907854faf89f7e2712d1e6
+guid: c179809a8e87c524a80e371c64914377
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
+      74: 9036694105013053538
+    second: Cube|Cube.001Action
+  - first:
+      74: 6610631862673137874
+    second: Cube|Cube.004Action.003
+  - first:
+      74: -3999578356269874737
+    second: Cube|CubeAction
+  - first:
+      74: 194676454379394236
+    second: Cube.004|Cube.001Action
+  - first:
       74: -3243783463967021143
     second: Cube.004|Cube.004Action.003
+  - first:
+      74: 6069470996275563646
+    second: Cube.004|CubeAction
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -34,36 +49,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Cube.004|Cube.004Action.003
-      takeName: Cube.004|Cube.004Action.003
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 30
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
