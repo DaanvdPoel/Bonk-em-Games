@@ -14,6 +14,7 @@ public class NormalSwing : MonoBehaviour
     [SerializeField] private Transform m_explosionForceOrigin;                      // Place where the explosion force applied to the bullet orifinates from.
     [SerializeField] private float m_explosionForceStrength;                        // How strong the applied force to the bullet should be.
     [SerializeField] private float m_explosionForceRadius;                          // How big the explosions radius should be.
+    [SerializeField] private float m_extraUpForce;
 
     [Space]
     [SerializeField] private Vector2 m_startAndEndRockHitWindow;                    // When the rock can hit the hammer in the animation, Value is clamped between 0 and clip length.
@@ -22,10 +23,7 @@ public class NormalSwing : MonoBehaviour
     private void Start()
     {
         m_hammerCollider.enabled = false;
-        m_animator.speed = 2;
-
-        //m_startAndEndRockHitWindow.x = m_startAndEndRockHitWindow.x / m_animator.speed;
-        //m_startAndEndRockHitWindow.y = m_startAndEndRockHitWindow.y / m_animator.speed;
+        m_animator.speed = 3;
     }
 
     private void Update()
@@ -82,6 +80,7 @@ public class NormalSwing : MonoBehaviour
             Debug.Log("KABLOOEI");
             var _bulletRB = collision.gameObject.GetComponent<Rigidbody>();
             _bulletRB.AddExplosionForce(m_explosionForceStrength, m_explosionForceOrigin.position, m_explosionForceRadius);
+            _bulletRB.AddForce(Vector3.up * m_extraUpForce, ForceMode.Impulse);
         }
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3442811833330133700}
   - component: {fileID: 1758805782455412065}
   - component: {fileID: 4579175399010374059}
+  - component: {fileID: 3299182527829225762}
   m_Layer: 0
   m_Name: AlphaEnemyStand
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3299182527829225762
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633624690024198270}
+  m_Material: {fileID: 13400000, guid: e5ecb5c39d0c4d44fafab927fe4d107f, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4181252739570371627, guid: ae44a107dfa5443448bbc5bbab12374c, type: 3}
