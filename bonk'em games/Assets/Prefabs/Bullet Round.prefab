@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5902384003956733898}
   - component: {fileID: 2641657050943137926}
   - component: {fileID: 7024405599793741807}
-  - component: {fileID: 8742905190812517702}
   - component: {fileID: 5158494424183324483}
+  - component: {fileID: -623681330873323816}
   m_Layer: 0
   m_Name: Bullet Round
   m_TagString: Bullet
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2624513563567611344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.55, y: 3.0731611, z: 6.44}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,23 +97,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8742905190812517702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2624513563567611344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3573973b64e5ed4b9ec9fa7b70db359, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageToPlayer: 25
-  damageToBoss: 10
-  despawnTime: 5
 --- !u!54 &5158494424183324483
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -130,3 +115,20 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &-623681330873323816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2624513563567611344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50348aa177a17640a97b3148e771014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToPlayer: 25
+  damageToBoss: 10
+  despawnTime: 20
+  maxBounceCount: 5
+  bounciness: 0.7

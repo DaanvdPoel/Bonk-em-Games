@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NormalSwing : MonoBehaviour
+public class SwingV2 : MonoBehaviour
 {
     [SerializeField] private SwingManager m_swingManager;
 

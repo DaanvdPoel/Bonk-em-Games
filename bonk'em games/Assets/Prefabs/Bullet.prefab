@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 5808983880530401785}
   - component: {fileID: 687982248433757977}
   - component: {fileID: 309400319420843858}
-  - component: {fileID: 7835531577454911261}
   - component: {fileID: -4449254950966027535}
-  - component: {fileID: 3695405748028531725}
+  - component: {fileID: 7494603938325067120}
+  - component: {fileID: 8358200075235798933}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7835531577454911261
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2206465831657741568}
-  m_Material: {fileID: 13400000, guid: e5ecb5c39d0c4d44fafab927fe4d107f, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &-4449254950966027535
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -115,7 +102,21 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &3695405748028531725
+--- !u!136 &7494603938325067120
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2206465831657741568}
+  m_Material: {fileID: 13400000, guid: e5ecb5c39d0c4d44fafab927fe4d107f, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8358200075235798933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,9 +125,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2206465831657741568}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3573973b64e5ed4b9ec9fa7b70db359, type: 3}
+  m_Script: {fileID: 11500000, guid: b50348aa177a17640a97b3148e771014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damageToPlayer: 25
   damageToBoss: 10
   despawnTime: 5
+  maxBounceCount: 3
+  bounciness: 0.8

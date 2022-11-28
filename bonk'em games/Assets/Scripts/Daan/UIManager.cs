@@ -16,16 +16,19 @@ public class UIManager : MonoBehaviour
             Destroy(this);
         else
             instance = this;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void WinScreen()
     {
         winScreen.active = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void DeathScreen()
     {
         deathScreen.active = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void QuitGame()
@@ -39,6 +42,6 @@ public class UIManager : MonoBehaviour
     }
   public void LoadGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Enviroment");
     }
 }
