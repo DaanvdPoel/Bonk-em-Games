@@ -4,8 +4,35 @@ ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
-      74: 7276344737650071997
-    second: Hammer|HammerAction
+      74: -2894719780763532680
+    second: Hammer.002|Action
+  - first:
+      74: 8808927039232796241
+    second: Hammer.002|Action.001
+  - first:
+      74: 8746780337290725128
+    second: Hammer.002|Action.002
+  - first:
+      74: 5931430378256860942
+    second: Hammer.002|CameraAction
+  - first:
+      74: -5065459423157413664
+    second: Hammer.002|FirstSwing
+  - first:
+      74: 5278759490418043944
+    second: Hammer.002|HammerAction
+  - first:
+      74: 4074704529264569191
+    second: Hammer.002|MovementPath.001Action.001
+  - first:
+      74: 3524081162257741915
+    second: Hammer.002|MovementPath.001Action.002
+  - first:
+      74: -7816507662708639126
+    second: Hammer.002|SecondSwing
+  - first:
+      74: -2472061473696278026
+    second: Hammer.002|Swing2.0
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -27,7 +54,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -36,11 +63,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Hammer|HammerAction
-      takeName: Hammer|HammerAction
+      name: Hammer.002|Swing2.0
+      takeName: Hammer.002|Swing2.0
       internalID: 0
       firstFrame: 0
-      lastFrame: 29
+      lastFrame: 15
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

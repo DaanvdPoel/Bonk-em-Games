@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     // Unityeditor accesible variables:
     [Header("Setttings")]
     [SerializeField] private Transform m_orientation;
+    [SerializeField] private GameObject m_jumpForceOrigin;
 
     [Space]
     [SerializeField] private bool m_useSlopeAngle = true;                       // Use angle based ground detection.
@@ -137,7 +138,8 @@ public class PlayerMovement : MonoBehaviour
         else { m_canJump = true; }
         if (Input.GetKeyDown(KeyCode.Space) && m_canJump && m_isGrounded)
         {
-            m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
+            //m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
+            m_rigidBody.AddExplosionForce(m_jumpForce, m_jumpForceOrigin.transform.position, 100);
             m_isGrounded = false;
             m_canJump = false;
         }
