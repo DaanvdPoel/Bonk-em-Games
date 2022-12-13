@@ -12,9 +12,8 @@ public class NormalSwing : MonoBehaviour
     [SerializeField] private BoxCollider m_hammerCollider;                          // Reference tot he attached collider.
 
     [Space]
-    [SerializeField] private Transform m_explosionForceOrigin;                      // Place where the explosion force applied to the bullet orifinates from.
+    [SerializeField] private Transform m_collisionMiddle;                           // Middle of the reflection collider.
     [SerializeField] private float m_reflectForceStrength;                          // How strong the applied force to the bullet should be.
-    //[SerializeField] private float m_explosionForceRadius;                          // How big the explosions radius should be.
     [SerializeField] private float m_extraUpForce;
 
     [Space]
@@ -26,15 +25,14 @@ public class NormalSwing : MonoBehaviour
     [SerializeField] private float m_impactShakeDuration;
 
     private bool m_doOnce = false;
-    private CamShake m_camShakeScript;                                              // reerence to this script.
+    private CamShake m_camShakeScript;                                              // reference to this script.
 
     private void Start()
     {
         m_hammerCollider.enabled = false;
         m_animator.speed = 1f;
         m_camShakeScript = FindObjectOfType<CamShake>();
-
-        m_hitParticle.scalingMode = ParticleSystemScalingMode.Shape;
+        m_hitParticle.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -48,6 +46,9 @@ public class NormalSwing : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets animation and starts the oroutine responsible for swinging the hammer.
+    /// </summary>
     private void SwingWindow()
     {
         if (Input.GetMouseButtonUp(0) && SwingManager.canSwing && !m_doOnce)
@@ -78,6 +79,9 @@ public class NormalSwing : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Timings for enabling and disabling the hitbox.
+    /// </summary>
     private IEnumerator Timer()
     {
         m_hammerCollider.enabled = false;
@@ -87,12 +91,14 @@ public class NormalSwing : MonoBehaviour
 
         yield return new WaitForSeconds(m_startAndEndRockHitWindow.x / m_animator.speed);
         m_hammerCollider.enabled = true;
+        m_hitParticle.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(m_startAndEndRockHitWindow.y / m_animator.speed);
         m_hammerCollider.enabled = false;
 
         yield return new WaitForSeconds((m_animClip.length / m_animator.speed) - (m_startAndEndRockHitWindow.y / m_animator.speed));
 
+        m_hitParticle.gameObject.SetActive(false);
         Debug.Log((m_animClip.length * m_animator.speed) - m_startAndEndRockHitWindow.y);
         SwingManager.canSwing = true;
         m_doOnce = false;
@@ -102,14 +108,19 @@ public class NormalSwing : MonoBehaviour
     {
         if (other.CompareTag("Bullet"))
         {
-           // m_hitParticle.gameObject.SetActive(false);
-            //m_hitParticle.gameObject.SetActive(true);
+            m_hitParticle.gameObject.SetActive(false);
+            m_hitParticle.gameObject.SetActive(true);
 
             Debug.Log("KABLOOEI");
 
             var _bulletRB = other.gameObject.GetComponent<Rigidbody>();
 
-            _bulletRB.AddForce(Camera.main.transform.forward * m_reflectForceStrength, ForceMode.Impulse);
+            // draw a vector between the camera and the colliders center.
+            Vector3 _reflectionVector = m_collisionMiddle.transform.position - Camera.main.transform.position;
+            Debug.Log(m_hammerCollider.transform.position + " | " + Camera.main.transform.position);
+
+            _bulletRB.velocity = Vector3.zero;
+            _bulletRB.AddForce(_reflectionVector.normalized * m_reflectForceStrength, ForceMode.Impulse);
         }
     }
 
