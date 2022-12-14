@@ -523,7 +523,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2108334239}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: LaunchGame
+        m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1036,6 +1036,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae459a113144f94fa2e0355e09d63bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winScreen: {fileID: 0}
+  deathScreen: {fileID: 0}
 --- !u!4 &2108334240
 Transform:
   m_ObjectHideFlags: 0

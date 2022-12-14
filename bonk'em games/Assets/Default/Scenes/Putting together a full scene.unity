@@ -35310,12 +35310,12 @@ PrefabInstance:
     - target: {fileID: 3732326662136454738, guid: 393d40fc48b566c4387f4b768c322a41,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3732326662136454738, guid: 393d40fc48b566c4387f4b768c322a41,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3732326662136454738, guid: 393d40fc48b566c4387f4b768c322a41,
         type: 3}
@@ -35325,32 +35325,32 @@ PrefabInstance:
     - target: {fileID: 3732326662136454738, guid: 393d40fc48b566c4387f4b768c322a41,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3732326662136454738, guid: 393d40fc48b566c4387f4b768c322a41,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3732326662136454738, guid: 393d40fc48b566c4387f4b768c322a41,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3732326662136454738, guid: 393d40fc48b566c4387f4b768c322a41,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3732326662136454738, guid: 393d40fc48b566c4387f4b768c322a41,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 3.6593
+      value: 3.6593018
       objectReference: {fileID: 0}
     - target: {fileID: 3732326662136454738, guid: 393d40fc48b566c4387f4b768c322a41,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.6693
+      value: 0.6693115
       objectReference: {fileID: 0}
     - target: {fileID: 3732326662136454738, guid: 393d40fc48b566c4387f4b768c322a41,
         type: 3}
@@ -35405,12 +35405,12 @@ PrefabInstance:
     - target: {fileID: 3732326662136454738, guid: 393d40fc48b566c4387f4b768c322a41,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -315
+      value: 58
       objectReference: {fileID: 0}
     - target: {fileID: 3732326662136454738, guid: 393d40fc48b566c4387f4b768c322a41,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -331
+      value: -23
       objectReference: {fileID: 0}
     - target: {fileID: 3732326662136454738, guid: 393d40fc48b566c4387f4b768c322a41,
         type: 3}
@@ -35436,6 +35436,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796014464557519618, guid: 393d40fc48b566c4387f4b768c322a41,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0021972656
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796014464557519618, guid: 393d40fc48b566c4387f4b768c322a41,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.004211426
       objectReference: {fileID: 0}
     - target: {fileID: 9050426070998660720, guid: 393d40fc48b566c4387f4b768c322a41,
         type: 3}
@@ -40771,7 +40781,7 @@ GameObject:
   - component: {fileID: 1748436049}
   m_Layer: 0
   m_Name: PitLava
-  m_TagString: Untagged
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45353,6 +45363,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_movementSpeed
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8716034514804694764, guid: ddfaf105901344b4d823d0c8ec55b964,
+        type: 3}
+      propertyPath: m_runSpeedMultiplier
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8716034514804694765, guid: ddfaf105901344b4d823d0c8ec55b964,
         type: 3}
