@@ -14,6 +14,18 @@ public class BossHealth : MonoBehaviour
         healthBar.SetMaxHealth(bossMaxHealth);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Bullet") == true)
+        {
+            if (other.gameObject.GetComponent<RoundBullet>().time >= 1)
+            {
+                TakeDamage(other.gameObject.GetComponent<RoundBullet>().damageToBoss);
+                Destroy(other.gameObject);
+            }
+        }
+    }
+
     public void TakeDamage(float amount)
     {
         healthBar.SetHealth(health);
