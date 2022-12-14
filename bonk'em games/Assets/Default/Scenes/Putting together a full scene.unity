@@ -9727,6 +9727,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4169651097245155981, guid: 1215998ccab1d8d4ca5e0735c573bac2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4169651097693772596, guid: 1215998ccab1d8d4ca5e0735c573bac2,
         type: 3}
       propertyPath: m_RootOrder
@@ -54816,7 +54821,7 @@ GameObject:
   - component: {fileID: 1748436049}
   m_Layer: 0
   m_Name: PitLava
-  m_TagString: Untagged
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
