@@ -29,12 +29,13 @@ public class NormalSwing : MonoBehaviour
 
     private void Start()
     {
-        StopAllCoroutines();
+        m_camShakeScript = FindObjectOfType<CamShake>();
+
         SwingManager.canSwing = true;
         m_doOnce = false;
+
         m_hammerCollider.enabled = false;
         m_animator.speed = 1f;
-        m_camShakeScript = FindObjectOfType<CamShake>();
         m_hitParticle.gameObject.SetActive(false);
     }
 
