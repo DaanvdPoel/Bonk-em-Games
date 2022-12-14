@@ -29,6 +29,9 @@ public class NormalSwing : MonoBehaviour
 
     private void Start()
     {
+        StopAllCoroutines();
+        SwingManager.canSwing = true;
+        m_doOnce = false;
         m_hammerCollider.enabled = false;
         m_animator.speed = 1f;
         m_camShakeScript = FindObjectOfType<CamShake>();
@@ -38,12 +41,6 @@ public class NormalSwing : MonoBehaviour
     private void Update()
     {
         SwingWindow();
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            //m_hitParticle.gameObject.SetActive(false);
-            m_hitParticle.gameObject.SetActive(true);
-        }
     }
 
     /// <summary>
@@ -123,6 +120,4 @@ public class NormalSwing : MonoBehaviour
             _bulletRB.AddForce(_reflectionVector.normalized * m_reflectForceStrength, ForceMode.Impulse);
         }
     }
-
-
 }
