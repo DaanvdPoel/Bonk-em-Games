@@ -28989,6 +28989,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4739310620338774728, guid: fa93e39048addaf49b218c609c91b07e,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1977534836}
+    - target: {fileID: 4739310620338774728, guid: fa93e39048addaf49b218c609c91b07e,
+        type: 3}
       propertyPath: bulletArc
       value: 0.175
       objectReference: {fileID: 0}
@@ -45368,10 +45373,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8716034514439090795, guid: ddfaf105901344b4d823d0c8ec55b964,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.931
+      objectReference: {fileID: 0}
     - target: {fileID: 8716034514804694673, guid: ddfaf105901344b4d823d0c8ec55b964,
         type: 3}
       propertyPath: m_Name
       value: Player V5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8716034514804694763, guid: ddfaf105901344b4d823d0c8ec55b964,
+        type: 3}
+      propertyPath: m_Mass
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8716034514804694764, guid: ddfaf105901344b4d823d0c8ec55b964,
         type: 3}
@@ -48393,7 +48408,7 @@ PrefabInstance:
     - target: {fileID: 2992747522796174543, guid: 455cd6733c05e584e80b818b2cd8f611,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.32
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 2992747522796174543, guid: 455cd6733c05e584e80b818b2cd8f611,
         type: 3}
