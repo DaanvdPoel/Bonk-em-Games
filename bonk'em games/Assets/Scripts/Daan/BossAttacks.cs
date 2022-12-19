@@ -9,12 +9,21 @@ public class BossAttacks : MonoBehaviour
     [SerializeField] private float bulletArc = 1;
     [SerializeField] private float attackCooldown;
     [SerializeField] private Vector2 spreadField;
+    [SerializeField] private GameObject player;
     private float time;
 
     private void Update()
     {
         time = time + Time.deltaTime;
-        NormalAttack();
+
+        if (Vector3.Distance(player.transform.position, transform.position) <= 35)
+        {
+            Invoke("PushAttack", 1f);
+        }
+        else
+        {
+            NormalAttack();
+        }
     }
 
     private void NormalAttack()
@@ -30,7 +39,12 @@ public class BossAttacks : MonoBehaviour
 
     private void PushAttack()
     {
+        if (time >= attackCooldown)
+        {
+            Vector3 pushDirection = (transform.position - player.transform.position) / Vector3.Distance(player.transform.position, transform.position);
+            player.GetComponent<Rigidbody>().AddForce(new Vector3(-pushDirection.x * 50000, pushDirection.y * 100, -pushDirection.z * 50000));
 
+        }
     }
 
     private void BigAttack()
