@@ -23,7 +23,7 @@ public class NormalSwing : MonoBehaviour
     private void Start()
     {
         m_hammerCollider.enabled = false;
-        m_animator.speed = 3;
+        m_animator.speed = 2f;
     }
 
     private void Update()
@@ -36,6 +36,7 @@ public class NormalSwing : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && SwingManager.canSwing && !m_doOnce)
         {
             m_doOnce = true;
+            SwingManager.canSwing = false;
 
             m_animator.Play(m_animClip.name);
             Debug.Log(m_animClip.name);
@@ -53,6 +54,10 @@ public class NormalSwing : MonoBehaviour
 
             // Setup and iterate a timer
             StartCoroutine(Timer());
+        }
+        else
+        {
+            m_doOnce = false;
         }
     }
 
