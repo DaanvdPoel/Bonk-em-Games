@@ -11205,6 +11205,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BetaPot
       objectReference: {fileID: 0}
+    - target: {fileID: 1490257669133521804, guid: 1d3f5ea034464ca418340db26bb83584,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 263b89003b50bea40a5fd5313356ea18, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d3f5ea034464ca418340db26bb83584, type: 3}
 --- !u!4 &1754289774 stripped
