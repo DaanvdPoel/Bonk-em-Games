@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossAttacks : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject bigAttack;
     [SerializeField] private float bulletSpeed = 100;
     [SerializeField] private float bulletArc = 1;
     [SerializeField] private float attackCooldown;
@@ -22,7 +23,7 @@ public class BossAttacks : MonoBehaviour
         }
         else
         {
-            NormalAttack();
+            BigAttack();
         }
     }
 
@@ -49,6 +50,12 @@ public class BossAttacks : MonoBehaviour
 
     private void BigAttack()
     {
-        //
+        if (time >= attackCooldown)
+        {
+            Debug.Log("dasda");
+            GameObject temp = Instantiate(bigAttack, new Vector3(player.transform.position.x, player.transform.position.y + 50, player.transform.position.z), Quaternion.identity);
+            time = 0;
+        }
     }
+
 }
