@@ -16,19 +16,22 @@ public class UIManager : MonoBehaviour
             Destroy(this);
         else
             instance = this;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void WinScreen()
     {
         winScreen.active = true;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
     }
 
     public void DeathScreen()
     {
         deathScreen.active = true;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
     }
 
     public void QuitGame()
@@ -39,9 +42,13 @@ public class UIManager : MonoBehaviour
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
     }
-  public void LoadGame()
+    public void LoadGame()
     {
-        SceneManager.LoadScene("Enviroment");
+        SceneManager.LoadScene("Putting together a full scene");
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1f;
     }
 }

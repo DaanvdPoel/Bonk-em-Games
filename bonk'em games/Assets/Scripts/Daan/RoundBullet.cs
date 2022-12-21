@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class RoundBullet : MonoBehaviour
 {
-    [SerializeField] private float damageToPlayer = 25;
-    [SerializeField] private float damageToBoss = 10;
+    public float damageToPlayer = 25;
+    public float damageToBoss = 10;
     [SerializeField] private float despawnTime = 5;
     [SerializeField] private int maxBounceCount = 3;
     [SerializeField] private float bounciness = 0.8f;
     private int bounceCount;
-    private float time;
+    public float time;
 
     private void Awake()
     {
