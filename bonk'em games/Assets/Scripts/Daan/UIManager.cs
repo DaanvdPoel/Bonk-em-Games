@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
         winScreen.active = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        Time.timeScale = 0.1f;
+        Time.timeScale = 0f;
     }
 
     public void DeathScreen()
@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
         deathScreen.active = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        Time.timeScale = 0.1f;
+        Time.timeScale = 0f;
     }
 
     public void QuitGame()
