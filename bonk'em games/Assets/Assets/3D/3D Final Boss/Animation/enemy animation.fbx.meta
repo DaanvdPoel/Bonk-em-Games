@@ -19,9 +19,6 @@ ModelImporter:
       74: -8194971655198363341
     second: Cube.002|Cube.012Action
   - first:
-      74: 6273842699692690448
-    second: Cube.002|Cube.013Action
-  - first:
       74: -3851186726917111761
     second: Cube.002|Cube.020Action
   - first:
@@ -39,9 +36,6 @@ ModelImporter:
   - first:
       74: 7161481345037698436
     second: Cube.005|Cube.012Action
-  - first:
-      74: -1248015294552335545
-    second: Cube.005|Cube.013Action
   - first:
       74: 6702086021375320020
     second: Cube.005|Cube.020Action
@@ -61,9 +55,6 @@ ModelImporter:
       74: 1799667725951750767
     second: Cube.006|Cube.012Action
   - first:
-      74: 6308715458372590577
-    second: Cube.006|Cube.013Action
-  - first:
       74: 5134941758107515528
     second: Cube.006|Cube.020Action
   - first:
@@ -81,9 +72,6 @@ ModelImporter:
   - first:
       74: -316733974795855405
     second: Cube.008|Cube.012Action
-  - first:
-      74: -2802051455654644960
-    second: Cube.008|Cube.013Action
   - first:
       74: 7182231816208927056
     second: Cube.008|Cube.020Action
@@ -103,9 +91,6 @@ ModelImporter:
       74: 4795700235541847013
     second: Cube.012|Cube.012Action
   - first:
-      74: 8210857780264285567
-    second: Cube.012|Cube.013Action
-  - first:
       74: -3924788991632271568
     second: Cube.012|Cube.020Action
   - first:
@@ -123,9 +108,6 @@ ModelImporter:
   - first:
       74: 263644584743196592
     second: Cube.020|Cube.012Action
-  - first:
-      74: -5407837971564710612
-    second: Cube.020|Cube.013Action
   - first:
       74: 8805704192713281921
     second: Cube.020|Cube.020Action
