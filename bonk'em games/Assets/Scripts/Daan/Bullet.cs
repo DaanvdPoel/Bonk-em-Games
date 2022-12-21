@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float damageToPlayer = 25;
-    [SerializeField] private float damageToBoss = 10;
+    public float damageToPlayer = 25;
+    public float damageToBoss = 10;
     [SerializeField] private float despawnTime = 5;
     [SerializeField] private int maxBounceCount = 3;
     [SerializeField] private float bounciness = 0.8f;
     private int bounceCount;
-    private float time;
+    public float time;
 
     private void Awake()
     {
@@ -33,14 +33,21 @@ public class Bullet : MonoBehaviour
             Debug.Log("Player got hit for " + damageToPlayer + " of damage");
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damageToPlayer);
         }
-        else if (collision.gameObject.CompareTag("Boss") && time >= 0.5)
-        {
-            collision.gameObject.GetComponent<BossHealth>().TakeDamage(damageToBoss);
-        }
-        else if (!collision.gameObject.CompareTag("Boss") && !collision.gameObject.CompareTag("Player") && time >= 0.5)
+
+        if (!collision.gameObject.CompareTag("Boss") && !collision.gameObject.CompareTag("Player") && time >= 0.5)
         {
             bounceCount = bounceCount + 1;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Boss") && time >= 0.5)
+        {
+            other.gameObject.GetComponent<BossHealth>().TakeDamage(damageToBoss);
+            Destroy(gameObject);
+        }
+
     }
 
     public void Despawn()
