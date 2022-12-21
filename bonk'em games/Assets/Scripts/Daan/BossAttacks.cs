@@ -23,7 +23,7 @@ public class BossAttacks : MonoBehaviour
         }
         else
         {
-            NormalAttack();
+            BigAttack();
         }
     }
 
@@ -50,6 +50,12 @@ public class BossAttacks : MonoBehaviour
 
     private void BigAttack()
     {
-       // GameObject temp = Instantiate()
+        if (time >= attackCooldown)
+        {
+            Debug.Log("dasda");
+            GameObject temp = Instantiate(bigAttack, new Vector3(player.transform.position.x, player.transform.position.y + 50, player.transform.position.z), Quaternion.identity);
+            time = 0;
+        }
     }
+
 }
