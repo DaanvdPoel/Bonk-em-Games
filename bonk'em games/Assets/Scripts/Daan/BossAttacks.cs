@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossAttacks : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject bigAttack;
     [SerializeField] private float bulletSpeed = 100;
     [SerializeField] private float bulletArc = 1;
     [SerializeField] private float attackCooldown;
@@ -49,6 +50,6 @@ public class BossAttacks : MonoBehaviour
 
     private void BigAttack()
     {
-        //
+       // GameObject temp = Instantiate()
     }
 }
