@@ -6,9 +6,9 @@ PhysicMaterial:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BulletPhysicMaterial
-  dynamicFriction: 0
-  staticFriction: 0
-  bounciness: 0.6
+  m_Name: Frick
+  dynamicFriction: 10
+  staticFriction: 10
+  bounciness: 0
   frictionCombine: 0
-  bounceCombine: 3
+  bounceCombine: 0

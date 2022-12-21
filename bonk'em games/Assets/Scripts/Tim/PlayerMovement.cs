@@ -25,11 +25,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool m_enableAirDash = false;                      // Enable the ability to dash onnce while airborn.
 
     [Space]
+    [SerializeField] private float m_downForce;                                 // Constant downforce applied to the player to prevent flying off slopes.
+    [SerializeField] private float m_downForceAfterJump;                        // Downforce applied to player after jump to prevent if from feeling floaty;
+    [SerializeField] private float m_downForceAfterJumpDelay;                   // How long after start of the jump to apply the extra down force;
+
+    [Space]
     [SerializeField] private float m_movementSpeed;                             // How fast the player move in M/S.
-    [SerializeField] private float m_runSpeedMultiplier;                          // How fast the player moves while running in M/S.
+    [SerializeField] private float m_runSpeedMultiplier;                        // How fast the player moves while running in M/S.
     [SerializeField] private float m_jumpForce;                                 // How much force is applied to jump.
     [SerializeField] private float m_airDashForce;                              // Force applied when airdashing.
-
 
     [Space]
     [SerializeField] private float m_mouseSensitivity;                          // Sensitivity of mouse.
@@ -38,16 +42,18 @@ public class PlayerMovement : MonoBehaviour
     // Unityeditor unaccesible variables:
     private Rigidbody m_rigidBody;                                              // Reference to the attached rigidbody.
 
-    private bool m_isGrounded = false;                                           // True on collision enter.
     private bool m_canJump = true;                                              // True when player can jump again.
-    private bool m_hasDashed = true;                                            // Restrains from dashing multiple times.
 
     private float m_desiredX;                                                   // Keeps track of the desired x rotation.
     private float m_xRotation;                                                  // Keeps track of the actual x rotation.    
-    private float m_currentMoveSpeed;                                            // Keeps track of the current run speed.
+    private float m_currentMoveSpeed;                                           // Keeps track of the current run speed.
 
     private float m_xSpeed;                                                     // keeps track of the desired speed on X Axis.
     private float m_ySpeed;                                                     // keeps track of the desired speed on Y Axis.
+
+    private bool m_isGrounded = false;                                          // True on collision enter.
+    private bool m_onGroundDetected = false;                                    // True for the frame ground is detected until ground has been detected again.
+
 
     private void Start()
     {
@@ -61,50 +67,29 @@ public class PlayerMovement : MonoBehaviour
     {
         DetectGround();
 
-        Movement();
         Jump();    
+        Movement();
     }
+
     private void FixedUpdate()
     {
         PhysicsMovement();
-        AirDash();
     }
 
     private void LateUpdate()
     {
         CameraRotation();
-    }
 
-
-    private void AirDash()
-    {
-        if (!m_isGrounded && Input.GetKeyDown(KeyCode.Space) && !m_hasDashed)
-        {
-            //Vector3 _movePos = (m_orientation.transform.right * m_xSpeed + m_orientation.transform.forward * m_airDashForce);
-            //Vector3 _newMovePos = new Vector3(_movePos.x, m_rigidBody.velocity.y, _movePos.z);
-
-            //Vector3 _newvel = new Vector3(m_rigidBody.velocity.x, 0, 0).normalized;
-            
-            m_rigidBody.AddForce(m_orientation.transform.forward * m_airDashForce, ForceMode.Impulse);
-            m_hasDashed = true;
-        }
+        // Set the onground to false at end of all code, to make it only true when entering the collison.
+        m_onGroundDetected = false;
     }
 
 
     /// <summary>
-    /// Responsible for applying movement force and enforcing its conditions.
+    /// Enforces conditions for applying movement and sets variables.
     /// </summary>
     private void Movement()
     {
-        //Vector3 _newVelocity = new Vector3();
-        //if (m_isGrounded || (!m_isGrounded && Input.GetAxisRaw("Horizontal") != 0))
-        //{
-        //    _newVelocity = new Vector3(Input.GetAxisRaw("Horizontal") * m_movementSpeed, m_rigidBody.velocity.y, 0);
-        //    if (Input.GetAxisRaw("Horizontal") == m_previousMovementKey) { return; }
-        //    m_previousMovementKey = (int)Input.GetAxisRaw("Horizontal");
-        //    m_rigidBody.velocity = _newVelocity;
-        //}
-
         m_xSpeed = Input.GetAxisRaw("Horizontal") * m_movementSpeed * m_currentMoveSpeed;
         m_ySpeed = Input.GetAxisRaw("Vertical") * m_movementSpeed;
 
@@ -118,11 +103,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Responsible for applying movement to the rigidbody.
+    /// </summary>
     private void PhysicsMovement()
     {
-        if (m_hasDashed) { return; }
         Vector3 _movePos = (m_orientation.transform.right * m_xSpeed + m_orientation.transform.forward * m_ySpeed * m_currentMoveSpeed);
-        Vector3 _newMovePos = new Vector3(_movePos.x, m_rigidBody.velocity.y, _movePos.z);
+        float _constantdownforce = m_rigidBody.velocity.y - m_downForce;
+        Vector3 _newMovePos = new Vector3(_movePos.x, _constantdownforce, _movePos.z);
 
         m_rigidBody.velocity = _newMovePos;
 
@@ -134,14 +122,16 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void Jump()
     {
-        if (!m_isGrounded) { m_canJump = false; }
-        else { m_canJump = true; }
-        if (Input.GetKeyDown(KeyCode.Space) && m_canJump && m_isGrounded)
+        if (m_onGroundDetected) { m_canJump = true; }
+
+        if (Input.GetKeyDown(KeyCode.Space) && m_canJump)
         {
-            //m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
+            //m_rigidBody.AddForce(m_orientation.transform.up * m_jumpForce, ForceMode.Impulse);
             m_rigidBody.AddExplosionForce(m_jumpForce, m_jumpForceOrigin.transform.position, 100);
-            m_isGrounded = false;
+
             m_canJump = false;
+
+            print("test");
         }
     }
 
@@ -160,8 +150,12 @@ public class PlayerMovement : MonoBehaviour
                     Vector3 _normalToEuler = Quaternion.FromToRotation(Vector3.up, _ray.normal).eulerAngles;
                     if (_normalToEuler.z < m_maxSlopeAngle)
                     {
+                        if (!m_isGrounded && !m_onGroundDetected)
+                        {
+                            m_onGroundDetected = true;
+                        }
+
                         m_isGrounded = true;
-                        m_hasDashed = false;
                         return;
                     }
                 }
@@ -171,7 +165,6 @@ public class PlayerMovement : MonoBehaviour
                 if (Physics.Raycast(gameObject.transform.position, -Vector3.up, m_raycastLength, m_groundLayer))
                 {
                     m_isGrounded = true;
-                    m_hasDashed = false;
                     return;
                 }
                 break;
