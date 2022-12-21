@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7024405599793741807}
   - component: {fileID: 5158494424183324483}
   - component: {fileID: -623681330873323816}
+  - component: {fileID: 875699629}
   m_Layer: 0
   m_Name: Bullet Round
   m_TagString: Bullet
@@ -97,7 +98,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5158494424183324483
 Rigidbody:
@@ -131,4 +132,21 @@ MonoBehaviour:
   damageToBoss: 10
   despawnTime: 20
   maxBounceCount: 5
-  bounciness: 0.7
+  bounciness: 0.6
+--- !u!114 &875699629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2624513563567611344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81af46252c771024985f7c9621e95fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_steerForce: 800
+  m_homingCancelDistance: 50
+  m_forwardForce: 10
+  m_speedLimit: 200
+  m_hasBounced: 0
