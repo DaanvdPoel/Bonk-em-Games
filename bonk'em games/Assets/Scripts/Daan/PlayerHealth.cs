@@ -12,6 +12,15 @@ public class PlayerHealth : MonoBehaviour
         playerHealth = maxPlayerHealth;
         healthBar.SetMaxHealth(maxPlayerHealth);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Lava")
+        {
+            TakeDamage(1000000);
+        }
+    }
+
     public void TakeDamage(float amount)
     {
         playerHealth = playerHealth - amount;

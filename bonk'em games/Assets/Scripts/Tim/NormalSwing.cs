@@ -25,25 +25,20 @@ public class NormalSwing : MonoBehaviour
     [SerializeField] private float m_impactShakeDuration;
 
     private bool m_doOnce = false;
-    private CamShake m_camShakeScript;                                              // reference to this script.
 
     private void Start()
     {
+        SwingManager.canSwing = true;
+        m_doOnce = false;
+
         m_hammerCollider.enabled = false;
         m_animator.speed = 1f;
-        m_camShakeScript = FindObjectOfType<CamShake>();
         m_hitParticle.gameObject.SetActive(false);
     }
 
     private void Update()
     {
         SwingWindow();
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            //m_hitParticle.gameObject.SetActive(false);
-            m_hitParticle.gameObject.SetActive(true);
-        }
     }
 
     /// <summary>
@@ -111,18 +106,16 @@ public class NormalSwing : MonoBehaviour
             m_hitParticle.gameObject.SetActive(false);
             m_hitParticle.gameObject.SetActive(true);
 
-            Debug.Log("KABLOOEI");
-
             var _bulletRB = other.gameObject.GetComponent<Rigidbody>();
 
             // draw a vector between the camera and the colliders center.
             Vector3 _reflectionVector = m_collisionMiddle.transform.position - Camera.main.transform.position;
-            Debug.Log(m_hammerCollider.transform.position + " | " + Camera.main.transform.position);
 
             _bulletRB.velocity = Vector3.zero;
             _bulletRB.AddForce(_reflectionVector.normalized * m_reflectForceStrength, ForceMode.Impulse);
+
+            var _homingScript = _bulletRB.gameObject.GetComponent<BulletHoming>();
+            _homingScript.m_hasBounced = true;
         }
     }
-
-
 }

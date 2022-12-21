@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Default/Scenes/Enviroment.unity
-    guid: e603193668776b54ab5c23ed20c20e4c
+    path: Assets/Default/Scenes/MainMenu.unity
+    guid: aa80405f26053504394e09b4f2ec757e
+  - enabled: 1
+    path: Assets/Default/Scenes/Putting together a full scene.unity
+    guid: c5725e52a7a78d744b479f011e25fbcb
   m_configObjects: {}
