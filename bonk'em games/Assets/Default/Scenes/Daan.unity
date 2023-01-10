@@ -12335,6 +12335,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.4149575, y: 6.929774, z: 3.769815}
   m_Center: {x: -0.23205894, y: 1.3504853, z: -1.2333302}
+--- !u!114 &614900247 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2655859423249002143, guid: fa93e39048addaf49b218c609c91b07e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1145455806}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614900244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5954d7d8d2a702d49b1ff30ec80ea6eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &619705549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17716,7 +17728,7 @@ GameObject:
   - component: {fileID: 885661121}
   m_Layer: 0
   m_Name: VLOER
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28906,6 +28918,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1977534836}
+    - target: {fileID: 2815736587608336264, guid: fa93e39048addaf49b218c609c91b07e,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 2815736587608336265, guid: fa93e39048addaf49b218c609c91b07e,
         type: 3}
       propertyPath: m_RootOrder
@@ -28994,9 +29011,20 @@ PrefabInstance:
       objectReference: {fileID: 1977534836}
     - target: {fileID: 4739310620338774728, guid: fa93e39048addaf49b218c609c91b07e,
         type: 3}
+      propertyPath: bigAttack
+      value: 
+      objectReference: {fileID: 1543196589447925851, guid: 92a1a29f705e6af4db89ccac76fd9f39,
+        type: 3}
+    - target: {fileID: 4739310620338774728, guid: fa93e39048addaf49b218c609c91b07e,
+        type: 3}
       propertyPath: bulletArc
       value: 0.175
       objectReference: {fileID: 0}
+    - target: {fileID: 4739310620338774728, guid: fa93e39048addaf49b218c609c91b07e,
+        type: 3}
+      propertyPath: bossHealth
+      value: 
+      objectReference: {fileID: 614900247}
     - target: {fileID: 4739310620338774728, guid: fa93e39048addaf49b218c609c91b07e,
         type: 3}
       propertyPath: bulletSpeed

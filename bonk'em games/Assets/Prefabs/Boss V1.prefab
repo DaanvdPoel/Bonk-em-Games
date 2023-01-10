@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 4739310620338774728}
   - component: {fileID: 2655859423249002143}
   - component: {fileID: 614900245}
+  - component: {fileID: 4469922586909731972}
   m_Layer: 0
   m_Name: Boss V1
   m_TagString: Boss
@@ -163,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  rotationSpeed: 100
+  rotationSpeed: 500
 --- !u!114 &4739310620338774728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,11 +178,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2624513563567611344, guid: 38eef7d11f25d09489c3228d32aee25b, type: 3}
+  bigAttack: {fileID: 1543196589447925851, guid: 92a1a29f705e6af4db89ccac76fd9f39,
+    type: 3}
   bulletSpeed: 1000
   bulletArc: 0.175
   attackCooldown: 2
   spreadField: {x: 0.5, y: 0.5}
   player: {fileID: 0}
+  bossHealth: {fileID: 2655859423249002143}
 --- !u!114 &2655859423249002143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +200,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossMaxHealth: 100
   healthBar: {fileID: 655290978161349268}
+  health: 0
 --- !u!65 &614900245
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2815736587608336271}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.4149575, y: 6.929774, z: 3.769815}
+  m_Center: {x: -0.23205894, y: 1.3504853, z: -1.2333302}
+--- !u!65 &4469922586909731972
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -11,11 +11,14 @@ public class BossAttacks : MonoBehaviour
     [SerializeField] private float attackCooldown;
     [SerializeField] private Vector2 spreadField;
     [SerializeField] private GameObject player;
+    [SerializeField] private BossHealth bossHealth;
     private float time;
 
     private void Update()
     {
         time = time + Time.deltaTime;
+
+        Debug.Log(bossHealth.bossMaxHealth / 2);
 
         if (Vector3.Distance(player.transform.position, transform.position) <= 35)
         {
@@ -23,7 +26,24 @@ public class BossAttacks : MonoBehaviour
         }
         else
         {
-            BigAttack();
+            if (bossHealth.health > (bossHealth.bossMaxHealth / 2))
+            {
+                NormalAttack();
+                Debug.Log(bossHealth.bossMaxHealth / 2);
+            }
+            else
+            {
+                Debug.Log("boss low HP");
+                int temp = Random.Range(1, 5);
+                if(temp == 1)
+                {
+                    BigAttack();
+                }
+                else
+                {
+                    NormalAttack();
+                }
+            }
         }
     }
 
@@ -52,7 +72,6 @@ public class BossAttacks : MonoBehaviour
     {
         if (time >= attackCooldown)
         {
-            Debug.Log("dasda");
             GameObject temp = Instantiate(bigAttack, new Vector3(player.transform.position.x, player.transform.position.y + 50, player.transform.position.z), Quaternion.identity);
             time = 0;
         }
