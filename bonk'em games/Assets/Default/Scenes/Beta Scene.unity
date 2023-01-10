@@ -830,6 +830,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Final Floor (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7517082853210245011, guid: 3fd5f05230f5df844a0e1d7345248049,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fd5f05230f5df844a0e1d7345248049, type: 3}
 --- !u!1 &129266799 stripped
@@ -1867,6 +1872,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Final Floor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517082853210245011, guid: 3fd5f05230f5df844a0e1d7345248049,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fd5f05230f5df844a0e1d7345248049, type: 3}
@@ -3525,6 +3535,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
   m_Center: {x: -0.000000059604645, y: 0, z: 0.0000009536743}
+--- !u!114 &647860344 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2146982349362495433, guid: 393d40fc48b566c4387f4b768c322a41,
+    type: 3}
+  m_PrefabInstance: {fileID: 1463403310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06af339c34ea28d4a9fb084ec3a0b272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &649865025 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7316259055078493930, guid: efeeb08e67290e94da75b501af0da8c2,
@@ -3677,6 +3699,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7968401258162610690}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &680211262 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4146598754172488702, guid: 3dd43687d8997df4095c02a7946c9946,
+    type: 3}
+  m_PrefabInstance: {fileID: 2112240496412746207}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5954d7d8d2a702d49b1ff30ec80ea6eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &680439839 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7316259055078493930, guid: efeeb08e67290e94da75b501af0da8c2,
@@ -3772,6 +3806,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Final Floor (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517082853210245011, guid: 3fd5f05230f5df844a0e1d7345248049,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fd5f05230f5df844a0e1d7345248049, type: 3}
@@ -17295,6 +17334,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Final Floor (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7517082853210245011, guid: 3fd5f05230f5df844a0e1d7345248049,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fd5f05230f5df844a0e1d7345248049, type: 3}
 --- !u!1 &1298756012 stripped
@@ -22269,6 +22313,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1977534843, guid: ddfaf105901344b4d823d0c8ec55b964, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 647860344}
     - target: {fileID: 8716034514804694673, guid: ddfaf105901344b4d823d0c8ec55b964,
         type: 3}
       propertyPath: m_Name
@@ -28525,6 +28573,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1543196589447925851, guid: 92a1a29f705e6af4db89ccac76fd9f39,
         type: 3}
+    - target: {fileID: 6671315853312608169, guid: 3dd43687d8997df4095c02a7946c9946,
+        type: 3}
+      propertyPath: bossHealth
+      value: 
+      objectReference: {fileID: 680211262}
     - target: {fileID: 8901468575392832752, guid: 3dd43687d8997df4095c02a7946c9946,
         type: 3}
       propertyPath: camara

@@ -18,8 +18,6 @@ public class BossAttacks : MonoBehaviour
     {
         time = time + Time.deltaTime;
 
-        Debug.Log(bossHealth.bossMaxHealth / 2);
-
         if (Vector3.Distance(player.transform.position, transform.position) <= 35)
         {
             Invoke("PushAttack", 1f);
@@ -33,7 +31,6 @@ public class BossAttacks : MonoBehaviour
             }
             else
             {
-                Debug.Log("boss low HP");
                 int temp = Random.Range(1, 5);
                 if(temp == 1)
                 {
