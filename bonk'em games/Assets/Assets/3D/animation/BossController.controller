@@ -56,7 +56,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cube_004|Cube_004Action_003
+  m_Name: Attack|Animation
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -69,7 +69,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -3243783463967021143, guid: c179809a8e87c524a80e371c64914377,
+  m_Motion: {fileID: -623603649343465320, guid: 303a0cce899873340bc32966d08efb68,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -119,7 +119,7 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_EntryPosition: {x: 70, y: 200, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 17779358806910079}
+  m_DefaultState: {fileID: -8238974609211316764}
