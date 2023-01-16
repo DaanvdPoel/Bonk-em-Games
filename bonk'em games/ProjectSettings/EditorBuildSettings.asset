@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Default/Scenes/MainMenu.unity
     guid: aa80405f26053504394e09b4f2ec757e
   - enabled: 1
-    path: Assets/Default/Scenes/Putting together a full scene.unity
-    guid: c5725e52a7a78d744b479f011e25fbcb
+    path: Assets/Default/Scenes/ReleaseScene.unity
+    guid: 37a24f6e494a91d40b180cdf66d09325
   m_configObjects: {}
