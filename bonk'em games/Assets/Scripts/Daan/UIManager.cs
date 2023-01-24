@@ -46,7 +46,7 @@ public class UIManager : MonoBehaviour
     }
     public void LoadGame()
     {
-        SceneManager.LoadScene("Putting together a full scene");
+        SceneManager.LoadScene("ReleaseScene");
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1f;

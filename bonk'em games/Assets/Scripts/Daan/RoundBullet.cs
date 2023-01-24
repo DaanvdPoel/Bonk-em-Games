@@ -14,7 +14,7 @@ public class RoundBullet : MonoBehaviour
 
     private void Awake()
     {
-        gameObject.GetComponent<SphereCollider>().material.bounciness = bounciness;
+        gameObject.GetComponent<MeshCollider>().material.bounciness = bounciness;
     }
 
     private void Update()
